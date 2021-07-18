@@ -1,2 +1,2 @@
-# home
-The landing page of The PED Corp.
+# The PED Corp.
+The official website of The PED Corp.
