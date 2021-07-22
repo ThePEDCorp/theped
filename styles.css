@@ -1,0 +1,59 @@
+
+@import url('https://fonts.googleapis.com/css?family=Titan+One');
+
+:root {
+  font-size: 16px;
+  font-family: 'Open Sans';
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --transition-speed: 600ms;
+}
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ddd; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #666; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #444; 
+}
+
+.home-body{
+  height: 100%;
+}
+
+
+body {
+  background-color: white;
+}
+
+body { 
+  box-sizing: border-box;
+  color: black;
+  margin: 0;
+  padding: 0;
+  /* color: #424242; */
+  background-color: #dbe3e5;
+}
+
+div{
+  display:block;
+  position:absolute;
+  }
+

@@ -1,0 +1,60 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+
+#content{
+  transform: translateY(100vh);
+  margin-top: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fade-in{
+  animation: fadeIn 2500ms ease-in-out forwards;
+  animation-delay: calc(var(--order)*300ms);
+}
+@keyframes fadeIn{
+  from{
+    transform: translateY(0);
+    color: rgba(255,255,255,0);
+  }
+  to{
+    transform: translateY(-100vh);
+    color: rgba(255,255,255,1);
+  }
+}
+
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ddd; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #666; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #444; 
+}

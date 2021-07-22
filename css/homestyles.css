@@ -1,0 +1,344 @@
+/* https://github.com/joypixels/emoji-toolkit/blob/master/extras/css/joypixels-awesome.css
+    👆 This is the link to the Emoji CSS
+    Copy lines 1 to 12 (you absolutely need them to get the emojis working)
+    Then, copy jpa-sm, med, or lg for the size you want
+    Also, copy over the classes of the emojis you use
+    In the HTML, throw the classes in an empty span if you want it in a sentence
+    Ex:
+    <span class="jpa-whale jpa-med"></span> (You need both the emoji's class AND the emoji size's class)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+*{
+  font-size: 2rem;
+  font-family: 'JetBrains Mono', sans-serif;
+  color: rgba(0,0,0,0);
+  align-items: center;
+  text-align: center;
+  cursor:default;
+  }
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ddd; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #666; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #444; 
+}
+
+.home-body{
+  height: 100%;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+
+#content{
+  margin-top: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 500px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.fade-in{
+  animation: fadeIn 2500ms ease-in-out forwards;
+  animation-delay: calc(var(--order)*300ms);
+}
+
+@keyframes fadeIn{
+  from{
+    transform: translateY(100vh);
+    color: rgba(255,255,255,0);
+  }
+  to{
+    transform: translateY(0vh);
+    color: rgba(255,255,255,1);
+  }
+}
+
+
+/* The PED animation */
+#ui {
+  will-change: transform;
+  white-space: nowrap;
+  transform-style: preserve-3d;
+  margin-bottom: 2em;
+}
+#ui .text {
+  position: absolute;
+  font-size: 5rem;
+  color: #fff;
+  line-height: 15rem;
+  font-family: "Anton", sans-serif;
+  padding: 20px 0;
+  mix-blend-mode: screen;
+  transform-style: preserve-3d;
+}
+#ui .text:nth-child(1) {
+  -webkit-clip-path: polygon(-30% 0, -20% 0, 20% 100%, 0% 100%);
+  clip-path: polygon(-30% 0, -20% 0, 20% 100%, 0% 100%);
+  -webkit-animation: wave 2000ms -10000ms ease-in-out infinite alternate;
+  animation: wave 2000ms -10000ms ease-in-out infinite alternate;
+}
+  #ui .text:nth-child(2) {
+  -webkit-clip-path: polygon(-25% 0, -15% 0, 25% 100%, 5% 100%);
+  clip-path: polygon(-25% 0, -15% 0, 25% 100%, 5% 100%);
+  -webkit-animation: wave 2000ms -9800ms ease-in-out infinite alternate;
+  animation: wave 2000ms -9800ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(3) {
+  -webkit-clip-path: polygon(-20% 0, -10% 0, 30% 100%, 10% 100%);
+  clip-path: polygon(-20% 0, -10% 0, 30% 100%, 10% 100%);
+  -webkit-animation: wave 2000ms -9600ms ease-in-out infinite alternate;
+  animation: wave 2000ms -9600ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(4) {
+  -webkit-clip-path: polygon(-15% 0, -5% 0, 35% 100%, 15% 100%);
+  clip-path: polygon(-15% 0, -5% 0, 35% 100%, 15% 100%);
+  -webkit-animation: wave 2000ms -9400ms ease-in-out infinite alternate;
+  animation: wave 2000ms -9400ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(5) {
+  -webkit-clip-path: polygon(-10% 0, 0% 0, 40% 100%, 20% 100%);
+  clip-path: polygon(-10% 0, 0% 0, 40% 100%, 20% 100%);
+  -webkit-animation: wave 2000ms -9200ms ease-in-out infinite alternate;
+  animation: wave 2000ms -9200ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(6) {
+  -webkit-clip-path: polygon(-5% 0, 5% 0, 45% 100%, 25% 100%);
+  clip-path: polygon(-5% 0, 5% 0, 45% 100%, 25% 100%);
+  -webkit-animation: wave 2000ms -9000ms ease-in-out infinite alternate;
+  animation: wave 2000ms -9000ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(7) {
+  -webkit-clip-path: polygon(0% 0, 10% 0, 50% 100%, 30% 100%);
+  clip-path: polygon(0% 0, 10% 0, 50% 100%, 30% 100%);
+  -webkit-animation: wave 2000ms -8800ms ease-in-out infinite alternate;
+  animation: wave 2000ms -8800ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(8) {
+  -webkit-clip-path: polygon(5% 0, 15% 0, 55% 100%, 35% 100%);
+  clip-path: polygon(5% 0, 15% 0, 55% 100%, 35% 100%);
+  -webkit-animation: wave 2000ms -8600ms ease-in-out infinite alternate;
+  animation: wave 2000ms -8600ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(9) {
+  -webkit-clip-path: polygon(10% 0, 20% 0, 60% 100%, 40% 100%);
+  clip-path: polygon(10% 0, 20% 0, 60% 100%, 40% 100%);
+  -webkit-animation: wave 2000ms -8400ms ease-in-out infinite alternate;
+  animation: wave 2000ms -8400ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(10) {
+  -webkit-clip-path: polygon(15% 0, 25% 0, 65% 100%, 45% 100%);
+  clip-path: polygon(15% 0, 25% 0, 65% 100%, 45% 100%);
+  -webkit-animation: wave 2000ms -8200ms ease-in-out infinite alternate;
+  animation: wave 2000ms -8200ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(11) {
+  -webkit-clip-path: polygon(20% 0, 30% 0, 70% 100%, 50% 100%);
+  clip-path: polygon(20% 0, 30% 0, 70% 100%, 50% 100%);
+  -webkit-animation: wave 2000ms -8000ms ease-in-out infinite alternate;
+  animation: wave 2000ms -8000ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(12) {
+  -webkit-clip-path: polygon(25% 0, 35% 0, 75% 100%, 55% 100%);
+  clip-path: polygon(25% 0, 35% 0, 75% 100%, 55% 100%);
+  -webkit-animation: wave 2000ms -7800ms ease-in-out infinite alternate;
+  animation: wave 2000ms -7800ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(13) {
+  -webkit-clip-path: polygon(30% 0, 40% 0, 80% 100%, 60% 100%);
+  clip-path: polygon(30% 0, 40% 0, 80% 100%, 60% 100%);
+  -webkit-animation: wave 2000ms -7600ms ease-in-out infinite alternate;
+  animation: wave 2000ms -7600ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(14) {
+  -webkit-clip-path: polygon(35% 0, 45% 0, 85% 100%, 65% 100%);
+  clip-path: polygon(35% 0, 45% 0, 85% 100%, 65% 100%);
+  -webkit-animation: wave 2000ms -7400ms ease-in-out infinite alternate;
+  animation: wave 2000ms -7400ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(15) {
+  -webkit-clip-path: polygon(40% 0, 50% 0, 90% 100%, 70% 100%);
+  clip-path: polygon(40% 0, 50% 0, 90% 100%, 70% 100%);
+  -webkit-animation: wave 2000ms -7200ms ease-in-out infinite alternate;
+  animation: wave 2000ms -7200ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(16) {
+  -webkit-clip-path: polygon(45% 0, 55% 0, 95% 100%, 75% 100%);
+  clip-path: polygon(45% 0, 55% 0, 95% 100%, 75% 100%);
+  -webkit-animation: wave 2000ms -7000ms ease-in-out infinite alternate;
+  animation: wave 2000ms -7000ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(17) {
+  -webkit-clip-path: polygon(50% 0, 60% 0, 100% 100%, 80% 100%);
+  clip-path: polygon(50% 0, 60% 0, 100% 100%, 80% 100%);
+  -webkit-animation: wave 2000ms -6800ms ease-in-out infinite alternate;
+  animation: wave 2000ms -6800ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(18) {
+  -webkit-clip-path: polygon(55% 0, 65% 0, 105% 100%, 85% 100%);
+  clip-path: polygon(55% 0, 65% 0, 105% 100%, 85% 100%);
+  -webkit-animation: wave 2000ms -6600ms ease-in-out infinite alternate;
+  animation: wave 2000ms -6600ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(19) {
+  -webkit-clip-path: polygon(60% 0, 70% 0, 110% 100%, 90% 100%);
+  clip-path: polygon(60% 0, 70% 0, 110% 100%, 90% 100%);
+  -webkit-animation: wave 2000ms -6400ms ease-in-out infinite alternate;
+  animation: wave 2000ms -6400ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(20) {
+  -webkit-clip-path: polygon(65% 0, 75% 0, 115% 100%, 95% 100%);
+  clip-path: polygon(65% 0, 75% 0, 115% 100%, 95% 100%);
+  -webkit-animation: wave 2000ms -6200ms ease-in-out infinite alternate;
+  animation: wave 2000ms -6200ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(21) {
+  -webkit-clip-path: polygon(70% 0, 80% 0, 120% 100%, 100% 100%);
+  clip-path: polygon(70% 0, 80% 0, 120% 100%, 100% 100%);
+  -webkit-animation: wave 2000ms -6000ms ease-in-out infinite alternate;
+  animation: wave 2000ms -6000ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(22) {
+  -webkit-clip-path: polygon(75% 0, 85% 0, 125% 100%, 105% 100%);
+  clip-path: polygon(75% 0, 85% 0, 125% 100%, 105% 100%);
+  -webkit-animation: wave 2000ms -5800ms ease-in-out infinite alternate;
+  animation: wave 2000ms -5800ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(23) {
+  -webkit-clip-path: polygon(80% 0, 90% 0, 130% 100%, 110% 100%);
+  clip-path: polygon(80% 0, 90% 0, 130% 100%, 110% 100%);
+  -webkit-animation: wave 2000ms -5600ms ease-in-out infinite alternate;
+  animation: wave 2000ms -5600ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(24) {
+  -webkit-clip-path: polygon(85% 0, 95% 0, 135% 100%, 115% 100%);
+  clip-path: polygon(85% 0, 95% 0, 135% 100%, 115% 100%);
+  -webkit-animation: wave 2000ms -5400ms ease-in-out infinite alternate;
+  animation: wave 2000ms -5400ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(25) {
+  -webkit-clip-path: polygon(90% 0, 100% 0, 140% 100%, 120% 100%);
+  clip-path: polygon(90% 0, 100% 0, 140% 100%, 120% 100%);
+  -webkit-animation: wave 2000ms -5200ms ease-in-out infinite alternate;
+  animation: wave 2000ms -5200ms ease-in-out infinite alternate;
+}
+#ui .text:nth-child(26) {
+  -webkit-clip-path: polygon(95% 0, 105% 0, 145% 100%, 125% 100%);
+  clip-path: polygon(95% 0, 105% 0, 145% 100%, 125% 100%);
+  -webkit-animation: wave 2000ms -5000ms ease-in-out infinite alternate;
+  animation: wave 2000ms -5000ms ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes wave {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    color: #d4418e;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+    color: #0652c5;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    color: #d4418e;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+    color: #0652c5;
+  }
+}
+/* @-webkit-keyframes wave {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    color: #42378f;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+    color: #f53844;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    color: #42378f;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+    color: #f53844;
+  }
+} */
+
+a{
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: color 1s, font-size 1s;
+}
+
+a:hover{
+  color: transparent;
+  font-size: 1.5rem;
+}
+
+#special-boi{
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(317deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);  
+  background-size: 400%;
+  animation: wavy 2s ease-in-out infinite alternate;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: color 2s, font-size 1s;
+}
+
+#special-boi:hover{
+  color: transparent;
+  font-size: 2.5rem;
+}
+
+@keyframes wavy{
+  0%{
+    backround-position: 0% 0%;
+  }
+  100%{
+    background-position: 100% 100%;
+  }
+}
